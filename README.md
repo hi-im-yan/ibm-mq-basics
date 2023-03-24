@@ -38,7 +38,7 @@ mvn spring-boot:run
 ## How to use
 
 * We need to create the Queue and the Topic in the IBM MQ Console. If your container is running you should be able to access the console https://localhost:9443/. The credentials is by default: _admin_ and _passw0rd_. 
-* After that go to _manage_ -> _queue_ -> _create_ (https://localhost:9443/ibmmq/console/#/manage/qmgr/QM1/queues). Create a queue named _CUSTOM_QUEUE_ this will be mapped in the sender and the listeners.
+* After that go to _manage_ -> _queue_ -> _create_ (https://localhost:9443/ibmmq/console/#/manage/qmgr/QM1/queues). Select _local_ and create a queue named _CUSTOM_QUEUE_ this will be mapped in the sender and the listeners.
 * Now go to _manage_ -> _topic_ -> _create_ (https://localhost:9443/ibmmq/console/#/manage/qmgr/QM1/topics). Create a topic named _CUSTOM_TOPIC_ with the topic chain of _topic/message_. The topic chain will be mapped in the sender and the listeners.
 
 Now it'a all setup to use, you should be able to send a message making a POST request to _http://localhost:8080/queue_ with body: 
@@ -56,6 +56,8 @@ You should be able to send a topic making a POST request to _http://localhost:80
     "topicMessage":"This message is supposed to be processed by all subscribers."
 }
 ```
+
+Swagger documentation is also available at http://localhost:8080/swagger-ui/index.html
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
