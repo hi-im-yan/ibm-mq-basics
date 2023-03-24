@@ -23,6 +23,7 @@ public class Producer {
     public void createMessage(QueueMessage message) {
         log.info("PRODUCER " + message);
 
+        jmsTemplate.setPubSubDomain(false); // set to send to queue
         jmsTemplate.setMessageConverter(queueMessageConverter);
         jmsTemplate.convertAndSend(queueName, message);
     }
