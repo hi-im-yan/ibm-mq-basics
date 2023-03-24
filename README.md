@@ -41,7 +41,7 @@ mvn spring-boot:run
 * After that go to _manage_ -> _queue_ -> _create_ (https://localhost:9443/ibmmq/console/#/manage/qmgr/QM1/queues). Select _local_ and create a queue named _CUSTOM_QUEUE_ and _ERROR_QUEUE_ this will be mapped in the sender and the listeners.
 * Now go to _manage_ -> _topic_ -> _create_ (https://localhost:9443/ibmmq/console/#/manage/qmgr/QM1/topics). Create a topic named _CUSTOM_TOPIC_ with the topic chain of _topic/message_. The topic chain will be mapped in the sender and the listeners.
 
-Now it'a all setup to use, you should be able to send a message making a POST request to _http://localhost:8080/queue_ with body: 
+Now it's all setup to use, you should be able to send a message making a POST request to _http://localhost:8080/queue_ with body: 
 ```
 {
     "title":"This message is beign sent to IBM MQ",
